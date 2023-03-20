@@ -1,0 +1,105 @@
+commit d544cb78a71e80f5b92041ea79ec14cc8d673d46
+Author: Miikka Seppi <miikka.seppi123@gmail.com>
+Date:   Mon Mar 20 05:57:40 2023 +0200
+
+    poistettiin file1 muutettiin file2->file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 616434b766bb66ce9bc85feb35af5d2e3802b611
+Author: Miikka Seppi <miikka.seppi123@gmail.com>
+Date:   Mon Mar 20 05:45:31 2023 +0200
+
+    lisättiin tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 48a3e4f8ac52dfe75b80f98eee739023e2ad918e
+Author: Miikka Seppi <miikka.seppi123@gmail.com>
+Date:   Mon Mar 20 05:38:46 2023 +0200
+
+    muutettiin ekaa ja kolmatta
+
+ eka.txt      | 3 +--
+ kolmas.txt   | 2 +-
+ tiedosto.txt | 6 ------
+ 3 files changed, 2 insertions(+), 9 deletions(-)
+
+commit d00901f1740b4cda935f13c804fe9ff6e219e337
+Author: Miikka Seppi <miikka.seppi123@gmail.com>
+Date:   Mon Mar 20 05:34:39 2023 +0200
+
+    uudelleennimentä
+
+ eka.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 034dca8ee3ffadb984a98532d6415fad937522fb
+Author: Miikka Seppi <miikka.seppi123@gmail.com>
+Date:   Mon Mar 20 05:33:32 2023 +0200
+
+    poistettiin toinen
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 5f7bed2f3f46df5b9597760b772f3a51d6f97232
+Author: Miikka Seppi <miikka.seppi123@gmail.com>
+Date:   Mon Mar 20 05:32:35 2023 +0200
+
+    muutettiin tekstiä
+
+ tiedosto.txt | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit bdfdc73de277bbce7c8b730fd4960b97ee6ea1c0
+Author: Miikka Seppi <miikka.seppi123@gmail.com>
+Date:   Mon Mar 20 04:49:07 2023 +0200
+
+    lisättiin uusi tiedosto
+
+ stuff/paras.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 64ebd1ccd61c4ff3e7fc5cc1e31f44afa6f3719a
+Author: Miikka Seppi <miikka.seppi123@gmail.com>
+Date:   Mon Mar 20 04:47:41 2023 +0200
+
+    muutettiin toista ja kolmatta
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit d9009fb94e9d4dd09c4406c4bcec58bf4313b24f
+Author: Miikka Seppi <miikka.seppi123@gmail.com>
+Date:   Mon Mar 20 04:46:15 2023 +0200
+
+    Lisättiin kolmas teksti
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6f619a6efc7ccb2c72ea7c96dabcf721ff89b0b9
+Author: Miikka Seppi <miikka.seppi123@gmail.com>
+Date:   Mon Mar 20 04:44:15 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 10ff6f68bfbb16628f28d9e6615c409edf55c156
+Author: Miikka Seppi <miikka.seppi123@gmail.com>
+Date:   Mon Mar 20 04:41:38 2023 +0200
+
+    tiedosto.txt
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
