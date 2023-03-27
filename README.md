@@ -5,6 +5,6 @@ Tämä on **ohjelmistotekniikka-kurssilla** luotu *tehtävä*
 
 [komentorivi.txt](https://github.com/mseppi/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
 
-**Kaikki oikeudet pidätetään**
+[Vaatimusmäärittely](https://github.com/mseppi/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
-:DDDDD
+[Työaikakirjanpito](https://github.com/mseppi/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
