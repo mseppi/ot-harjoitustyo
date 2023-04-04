@@ -1,10 +1,11 @@
-# laskarit
-Tämä on **ohjelmistotekniikka-kurssilla** luotu *tehtävä*
+# Tetris sovellus
 
-[gitlog.txt](https://github.com/mseppi/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
+Sovellus on peli, jossa tippuu erinäköisiä palikoita. Pelin tarkoituksena on tehdä palikoista suoranainen rivi, jolloin rivi häviää ja pisteitä kertyy. Peli päättyy, kun palikat kertyvät ruudun yläreunaan asti.
 
-[komentorivi.txt](https://github.com/mseppi/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
+## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/mseppi/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
 [Työaikakirjanpito](https://github.com/mseppi/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
+
+[Changelog](https://github.com/mseppi/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
