@@ -4,8 +4,28 @@ classDiagram
     Player "2-8" -- "*" Board
     Player "1" -- "1" Square
     Player..>Dices
-    class Player
+    Square"next square" -- Square
+    Square..>Cards
+    Cards--Player
+    Building--Player
+    Action--Cards
+    Action--Player
+    Building--Square
+    class Player{
+    money
+    ownerships
+    }
     class Board    
-    class Square   
+    class Square{
+    start
+    prison
+    chance
+    community Chest
+    train station
+    street
+    }
     class Dices
-   
+    class Cards
+    class Action
+    class Building
+    
