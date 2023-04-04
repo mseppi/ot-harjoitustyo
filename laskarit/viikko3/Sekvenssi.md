@@ -1,7 +1,7 @@
 ```mermaid
 sequenceDiagram
     main->>machine:Machine()
-    machine->>tank:FueltTank()
+    machine->>tank:FuelTank()
     machine->>tank:tank.fill(40)
     machine->>engine:Engine(tank)
     main->>machine:drive()
