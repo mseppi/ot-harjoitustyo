@@ -48,7 +48,7 @@ def draw_game(screen):
 def final():
     clock = pygame.time.Clock()
     
-    piece=Pieces(T_BLOCK, WINDOW_WIDTH // 2 - BSIZE, 0)
+    piece = Pieces(T_BLOCK, WINDOW_WIDTH // 2 - BSIZE, 0)
 
     # Quitting game possible + moving
     left_moving = False
