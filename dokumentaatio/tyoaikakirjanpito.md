@@ -3,4 +3,5 @@
 | päivä | aika | mitä tein  |
 | :----:|:-----| :-----|
 | 27.3. |1     | Työaikakirjanpidon ja alustavan määrittelydokumentin teko|
-| yht   |1     | | 
+| 4.4.   |6     |Sovelluksen rakentaminen ja testaus | 
+| yht   |7     | | 
