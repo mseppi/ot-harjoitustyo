@@ -20,12 +20,20 @@ classDiagram
     start
     prison
     chance
-    community Chest
+    community chest
     train station
     street
     }
-    class Dices
-    class Cards
+    class Dices{
+    digit
+    }
+    class Cards{
+    chance
+    community chest
+    }
     class Action
-    class Building
+    class Building{
+    house
+    hotel
+    }
     
