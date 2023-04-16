@@ -15,6 +15,8 @@ pygame.display.set_caption("Tetris")
 T_BLOCK = [[1, 1, 1], [0, 1, 0]]
 
 # Draw tetris pieces + movement
+
+
 class Pieces:
     def __init__(self, shape, x, y):
         self.shape = shape
@@ -24,9 +26,10 @@ class Pieces:
     def draw(self, screen):
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
-                if self.shape[row][column]==1:
-                    pygame.draw.rect(screen, (255, 255, 255), (self.x + column * BSIZE, self.y + row * BSIZE, BSIZE, BSIZE))
-    
+                if self.shape[row][column] == 1:
+                    pygame.draw.rect(screen, (255, 255, 255), (self.x +
+                                     column * BSIZE, self.y + row * BSIZE, BSIZE, BSIZE))
+
     def down(self):
         self.y += BSIZE
 
@@ -35,19 +38,24 @@ class Pieces:
 
     def right(self):
         self.x += BSIZE
-    
+
 # Draw game outlines
+
+
 def draw_game(screen):
     for row in range(WINDOW_HEIGHT // BSIZE):
-        pygame.draw.line(screen, (0, 0, 0), (0, row * BSIZE), (WINDOW_WIDTH, row * BSIZE))
+        pygame.draw.line(screen, (0, 0, 0), (0, row * BSIZE),
+                         (WINDOW_WIDTH, row * BSIZE))
     for column in range(WINDOW_WIDTH // BSIZE):
-        pygame.draw.line(screen, (0, 0, 0), (column * BSIZE, 0), (column * BSIZE, WINDOW_HEIGHT))
+        pygame.draw.line(screen, (0, 0, 0), (column * BSIZE, 0),
+                         (column * BSIZE, WINDOW_HEIGHT))
 
-#main function
+# main function
+
 
 def final():
     clock = pygame.time.Clock()
-    
+
     piece = Pieces(T_BLOCK, WINDOW_WIDTH // 2 - BSIZE, 0)
 
     # Quitting game possible + moving
@@ -74,9 +82,7 @@ def final():
                     right_moving = False
                 elif event.key == pygame.K_DOWN:
                     down_moving = False
-                    
-                
-                
+
         screen.fill((0, 0, 0))
         draw_game(screen)
 
@@ -86,10 +92,12 @@ def final():
             piece.right()
         if down_moving:
             piece.down()
-        
+
         piece.down()
         piece.draw(screen)
         pygame.display.update()
         clock.tick(FPS)
+
+
 if __name__ == '__main__':
     final()
