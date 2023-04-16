@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 .pytest_cache
 __pycache__
 .coverage
 htmlcov
-=======
-__pycache__
-.coverage
->>>>>>> c6ae7061cab2d55ae491a93ba383733fa35785c5
+vs
+
