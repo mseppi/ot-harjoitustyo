@@ -1,5 +1,5 @@
 import pygame
-from game_logic import *
+from src.game_logic import *
 
 pygame.init()
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
