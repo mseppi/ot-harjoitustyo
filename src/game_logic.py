@@ -1,6 +1,9 @@
 import pygame
 from config import *
 
+# Make blocks (rest of the blocks coming later)
+T_BLOCK = [[1, 1, 1], [0, 1, 0]]
+
 class Pieces:
     def __init__(self, shape, x, y):
         self.shape = shape
@@ -22,14 +25,3 @@ class Pieces:
 
     def right(self):
         self.x += BSIZE
-
-# Draw game outlines
-
-
-def draw_game(screen):
-    for row in range(WINDOW_HEIGHT // BSIZE):
-        pygame.draw.line(screen, (0, 0, 0), (0, row * BSIZE),
-                         (WINDOW_WIDTH, row * BSIZE))
-    for column in range(WINDOW_WIDTH // BSIZE):
-        pygame.draw.line(screen, (0, 0, 0), (column * BSIZE, 0),
-                         (column * BSIZE, WINDOW_HEIGHT))
