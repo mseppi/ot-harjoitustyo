@@ -1,5 +1,5 @@
 import unittest
-from game import *
+from game_logic import *
 
 
 class TestTetris(unittest.TestCase):
