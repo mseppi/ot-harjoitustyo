@@ -57,7 +57,7 @@ class Pieces:
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] == 1:
-                    pygame.draw.rect(screen, (255, 255, 255), (self.x +
+                    pygame.draw.rect(screen, (self.color), (self.x +
                                      column * BSIZE, self.y + row * BSIZE, BSIZE, BSIZE))
 
     def rotate(self):
