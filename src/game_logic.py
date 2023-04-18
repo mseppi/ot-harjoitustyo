@@ -82,7 +82,7 @@ class Pieces:
                         return True
                     if self.x + column * BSIZE >= WINDOW_WIDTH:
                         return True
-                return False
+                    return False
 
     def freeze(self):
         for row in range(len(self.shape)):
@@ -94,7 +94,7 @@ class Pieces:
                         return True
                     if self.x + column * BSIZE >= WINDOW_WIDTH:
                         return True
-                return False
+                    return False
 
     def new_piece(self):
         shape_id = random.randrange(len(shapes))
