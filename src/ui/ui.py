@@ -16,6 +16,8 @@ def draw_game(screen):
 def final():
     clock = pygame.time.Clock()
 
+    piece = Pieces()
+
     # Quitting game possible + moving
     left_moving = False
     right_moving = False
@@ -44,7 +46,6 @@ def final():
         screen.fill((0, 0, 0))
         draw_game(screen)
 
-        piece = Pieces()
         if left_moving:
             piece.left()
         if right_moving:
