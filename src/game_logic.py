@@ -33,14 +33,22 @@ RED = (255, 0, 0)
 CYAN = (0, 255, 255)
 ORANGE = (255, 165, 0)
 BLUE = (0, 0, 255)
-colors = [PURPLE, YELLOW, GREEN, RED, CYAN, ORANGE, BLUE]
+
+shape_colors = {
+    0: PURPLE,
+    1: YELLOW,
+    2: GREEN,
+    3: RED,
+    4: CYAN,
+    5: ORANGE,
+    6: BLUE
+}
 
 class Pieces:
     def __init__(self):
-        shape = random.choice(shapes)
-        color = colors[shapes.index(shape)]
-        self.shape = shape
-        self.color = color
+        shape_id = random.randrange(len(shapes))
+        self.shape = shapes[shape_id]
+        self.color = shape_colors[shape_id]
         self.x = WINDOW_WIDTH // 2 - len(shape[0]) // 2
         self.y = 0
 
