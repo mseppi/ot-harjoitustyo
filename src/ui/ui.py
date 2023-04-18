@@ -52,7 +52,7 @@ def final():
         if down_moving:
             piece.down()
         else:
-            if not piece.collide():
+            if not piece.collision():
                 piece.down()
             else:
                 piece.freeze()
