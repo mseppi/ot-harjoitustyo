@@ -51,7 +51,12 @@ def final():
             piece.right()
         if down_moving:
             piece.down()
-
+        else:
+            if not piece.collide():
+                piece.down()
+            else:
+                piece.freeze()
+                piece.new_piece()
         piece.down()
         piece.draw(screen)
         pygame.display.update()

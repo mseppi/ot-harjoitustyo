@@ -70,3 +70,33 @@ class Pieces:
 
     def right(self):
         self.x += BSIZE
+
+    def collision(self):
+        for row in range(len(self.shape)):
+            for column in range(len(self.shape[0])):
+                if self.shape[row][column] != 0:
+                    if self.y + row * BSIZE >= WINDOW_HEIGHT:
+                        return True
+                    elif self.x + column * BSIZE < 0:
+                        return True
+                    elif self.x + column * BSIZE >= WINDOW_WIDTH:
+                        return True
+                    
+    def freeze(self):
+        for row in range(len(self.shape)):
+            for column in range(len(self.shape[0])):
+                if self.shape[row][column] != 0:
+                    if self.y + row * BSIZE >= WINDOW_HEIGHT:
+                        return True
+                    elif self.x + column * BSIZE < 0:
+                        return True
+                    elif self.x + column * BSIZE >= WINDOW_WIDTH:
+                        return True
+                    
+    def new_piece(self):
+        shape_id = random.randrange(len(shapes))
+        self.shape = shapes[shape_id]
+        self.color = shape_colors[shape_id]
+        self.x = WINDOW_WIDTH // 2 - len(self.shape[0]) // 2
+        self.y = 0
+    
