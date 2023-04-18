@@ -1,4 +1,4 @@
-from ui.ui import *
+from ui.ui import final
 
 def main():
     final()
