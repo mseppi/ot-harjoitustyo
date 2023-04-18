@@ -49,7 +49,7 @@ class Pieces:
         shape_id = random.randrange(len(shapes))
         self.shape = shapes[shape_id]
         self.color = shape_colors[shape_id]
-        self.x = WINDOW_WIDTH // 2 - len(shape[0]) // 2
+        self.x = WINDOW_WIDTH // 2 - len(self.shape[0]) // 2
         self.y = 0
 
 
