@@ -14,7 +14,7 @@ def draw_game(screen):
         
 def final():
     clock = pygame.time.Clock()
-
+    draw_game(screen)
     piece = Pieces()
 
     # Quitting game possible + moving
