@@ -2,7 +2,7 @@ import pygame
 from config import *
 import random
 
-# Make blocks (rest of the blocks coming later)
+# Make blocks
 shapes = [
     [[1, 1, 1],
      [0, 1, 0]],
@@ -36,9 +36,9 @@ BLUE = (0, 0, 255)
 colors = [PURPLE, YELLOW, GREEN, RED, CYAN, ORANGE, BLUE]
 
 class Pieces:
-    def __init__(self, shape, color):
+    def __init__(self):
         shape = random.choice(shapes)
-        color
+        color = colors[shapes.index(shape)]
         self.shape = shape
         self.color = color
         self.x = WINDOW_WIDTH // 2 - len(shape[0]) // 2
