@@ -7,10 +7,10 @@ pygame.display.set_caption("Tetris")
 
 def draw_game(screen):
     for row in range(WINDOW_HEIGHT // BSIZE):
-        pygame.draw.line(screen, (0, 0, 0), (0, row * BSIZE),
+        pygame.draw.line(screen, (WHITE), (0, row * BSIZE),
                          (WINDOW_WIDTH, row * BSIZE))
     for column in range(WINDOW_WIDTH // BSIZE):
-        pygame.draw.line(screen, (0, 0, 0), (column * BSIZE, 0),
+        pygame.draw.line(screen, (WHITE), (column * BSIZE, 0),
                          (column * BSIZE, WINDOW_HEIGHT))
         
 def final():

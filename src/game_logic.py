@@ -33,6 +33,7 @@ RED = (255, 0, 0)
 CYAN = (0, 255, 255)
 ORANGE = (255, 165, 0)
 BLUE = (0, 0, 255)
+WHITE = (255, 255, 255)
 
 shape_colors = {
     0: PURPLE,
