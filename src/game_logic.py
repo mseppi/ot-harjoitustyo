@@ -52,7 +52,7 @@ class Pieces:
         self.color = shape_colors[shape_id]
         self.x = WINDOW_WIDTH // 2 - len(self.shape[0]) // 2
         self.y = 0
-
+        self.frozen_blocks = []
 
     def draw(self, screen):
         for row in range(len(self.shape)):
@@ -89,10 +89,12 @@ class Pieces:
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
-                    pygame.draw.rect(screen, (self.color), (
-                        self.x + column * BSIZE, self.y + row * BSIZE, BSIZE, BSIZE))
+                    self.frozen_blocks.append(
+                        (self.x + column * BSIZE, self.y + row * BSIZE, self.color))
 
     def new_piece(self):
+        self.freeze()
+        self.frozen_blocks = []
         shape_id = random.randrange(len(shapes))
         self.shape = shapes[shape_id]
         self.color = shape_colors[shape_id]
