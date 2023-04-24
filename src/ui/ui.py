@@ -35,6 +35,8 @@ def final():
                     right_moving = True
                 elif event.key == pygame.K_DOWN:
                     down_moving = True
+                elif event.key == pygame.K_UP:
+                    piece.rotate()
             elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT:
                     left_moving = False
