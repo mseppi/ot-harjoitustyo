@@ -85,7 +85,7 @@ class Pieces:
                         return True
                     return False
 
-    def freeze(self):
+    def freeze(self, screen):
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:

@@ -58,7 +58,7 @@ def final():
             if not piece.collision():
                 piece.down()
             else:
-                piece.freeze()
+                piece.freeze(screen)
                 piece.new_piece()
         piece.down()
         piece.draw(screen)
