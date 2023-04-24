@@ -89,13 +89,8 @@ class Pieces:
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
-                    if self.y + row * BSIZE >= WINDOW_HEIGHT:
-                        return True
-                    if self.x + column * BSIZE < 0:
-                        return True
-                    if self.x + column * BSIZE >= WINDOW_WIDTH:
-                        return True
-                    return False
+                    pygame.draw.rect(screen, (self.color), (
+                        self.x + column * BSIZE, self.y + row * BSIZE, BSIZE, BSIZE))
 
     def new_piece(self):
         shape_id = random.randrange(len(shapes))
