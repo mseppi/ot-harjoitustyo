@@ -45,13 +45,10 @@ def final():
             piece.left()
         if right_moving:
             piece.right()
-#        if down_moving:
+#       if down_moving:
             piece.down()
-        else:
-            if not piece.collision():
-                piece.down()
-            else:
-                piece.new_piece()
+        if piece.collision():
+            piece.new_piece()
         piece.down()
         piece.draw(screen)
         pygame.display.update()
