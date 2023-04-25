@@ -8,7 +8,8 @@ class Ui{
 class Game_logic{
   shapes
   shape_colors
-  Pieces()}
+  Pieces()
+  Grid()}
 
 Main--Ui
 Ui--Game_logic
