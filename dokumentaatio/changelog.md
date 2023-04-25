@@ -8,3 +8,9 @@
 - Pelissä on lisää kuvioita
 - Kuvioille lisätty uniikit värit
 - Kuviot törmäävät pohjaan jonka jälkeen uusi kuvio tulee ylhäältä
+
+## Viikko 5
+- Kuvioita voi nyt pyörittää
+- Kuviot jäävät ruudulle kun kuvio törmää
+- Pelissä on nyt ruudukot
+- Pelilogiikkaan lisätty pelikentälle oma luokka
