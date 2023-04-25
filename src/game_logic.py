@@ -100,3 +100,40 @@ class Pieces:
         self.color = shape_colors[shape_id]
         self.x = WINDOW_WIDTH // 2 - len(self.shape[0]) // 2
         self.y = 0
+
+class Grid:
+
+    def __init__(self):
+        self.grid = []
+        self.rows = WINDOW_HEIGHT // BSIZE
+        self.columns = WINDOW_WIDTH // BSIZE
+        self.create_grid()
+
+    def create_grid(self):
+        for row in range(self.rows):
+            self.grid.append([])
+            for column in range(self.columns):
+                self.grid[row].append(0)
+
+    def draw(self, screen):
+        for row in range(self.rows):
+            pygame.draw.line(screen, (WHITE), (0, row * BSIZE),
+                             (WINDOW_WIDTH, row * BSIZE))
+        for column in range(self.columns):
+            pygame.draw.line(screen, (WHITE), (column * BSIZE, 0),
+                             (column * BSIZE, WINDOW_HEIGHT))
+
+    def draw_frozen_blocks(self, screen, piece):
+        for block in piece.frozen_blocks:
+            pygame.draw.rect(screen, (block[2]), (block[0], block[1], BSIZE, BSIZE))
+
+    def check_rows(self):
+        for row in range(self.rows):
+            if 0 not in self.grid[row]:
+                self.grid.pop(row)
+                self.grid.insert(0, [0 for _ in range(self.columns)])
+
+    def draw_grid(self, screen, piece):
+        self.draw(screen)
+        self.draw_frozen_blocks(screen, piece)
+        self.check_rows()

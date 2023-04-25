@@ -5,17 +5,10 @@ pygame.init()
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("Tetris")
 
-def draw_game(screen):
-    for row in range(WINDOW_HEIGHT // BSIZE):
-        pygame.draw.line(screen, (WHITE), (0, row * BSIZE),
-                         (WINDOW_WIDTH, row * BSIZE))
-    for column in range(WINDOW_WIDTH // BSIZE):
-        pygame.draw.line(screen, (WHITE), (column * BSIZE, 0),
-                         (column * BSIZE, WINDOW_HEIGHT))
         
 def final():
     clock = pygame.time.Clock()
-    draw_game(screen)
+    game = Grid()
     piece = Pieces()
 
     # Quitting game possible + moving
@@ -46,7 +39,6 @@ def final():
                     down_moving = False
 
         screen.fill((0, 0, 0))
-        draw_game(screen)
 
         if left_moving:
             piece.left()
