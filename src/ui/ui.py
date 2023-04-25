@@ -26,7 +26,7 @@ def final():
                     left_moving = True
                 elif event.key == pygame.K_RIGHT:
                     right_moving = True
-                elif event.key == pygame.K_DOWN:
+#                elif event.key == pygame.K_DOWN:
                     down_moving = True
                 elif event.key == pygame.K_UP:
                     piece.rotate()
@@ -35,7 +35,7 @@ def final():
                     left_moving = False
                 elif event.key == pygame.K_RIGHT:
                     right_moving = False
-                elif event.key == pygame.K_DOWN:
+#                elif event.key == pygame.K_DOWN:
                     down_moving = False
 
         screen.fill((0, 0, 0))
@@ -45,7 +45,7 @@ def final():
             piece.left()
         if right_moving:
             piece.right()
-        if down_moving:
+#        if down_moving:
             piece.down()
         else:
             if not piece.collision():

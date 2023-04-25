@@ -34,6 +34,7 @@ CYAN = (0, 255, 255)
 ORANGE = (255, 165, 0)
 BLUE = (0, 0, 255)
 WHITE = (255, 255, 255)
+GRAY = (128, 128, 128)
 
 shape_colors = {
     0: PURPLE,
@@ -112,10 +113,10 @@ class Grid:
 
     def draw(self, screen):
         for row in range(self.rows):
-            pygame.draw.line(screen, (WHITE), (0, row * BSIZE),
+            pygame.draw.line(screen, (GRAY), (0, row * BSIZE),
                              (WINDOW_WIDTH, row * BSIZE))
         for column in range(self.columns):
-            pygame.draw.line(screen, (WHITE), (column * BSIZE, 0),
+            pygame.draw.line(screen, (GRAY), (column * BSIZE, 0),
                              (column * BSIZE, WINDOW_HEIGHT))
 
     def draw_frozen_blocks(self, screen, piece):
