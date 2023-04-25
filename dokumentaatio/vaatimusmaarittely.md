@@ -9,7 +9,8 @@ Sovellus tulee olemaan klassinen Tetris-videopeli, jossa tarkoituksena tehdä va
 - Kuvioiden liikuttelu vasemmalle ja oikealle (ja alas) TEHTY
 - Kuvioiden tuleminen satunnaisesti TEHTY
 - Kuvioiden törmääminen TEHTY
-- Pelikenttä
+- Pelikenttä TEHTY (osittain)
+- Kuvioiden pyörittäminen TEHTY
 - Highscore-systeemi
 - Kuvioiden häviäminen kun niitä on kokonainen rivi kasassa
 - Pistemäärä
