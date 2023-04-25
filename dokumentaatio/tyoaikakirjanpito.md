@@ -8,4 +8,4 @@
 | 17.4   |3     |Koodin uudelleenformatoimista | 
 | 18.4   |4     |Koodin täydentämistä | 
 |24.4    |8     |Koodin täydentämistä ja suunnittelua | 
-| yht   |15     | | 
+| yht   |23     | | 
