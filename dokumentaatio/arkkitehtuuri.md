@@ -1,27 +1,3 @@
-```mermaid
-classDiagram
-class Main{
-  main()}
-class Ui{
-  draw_game()
-  final()}
-class Game_logic{
-  shapes
-  shape_colors
-  Pieces()
-  Grid()}
+![chrome_HNzwsbS49S](https://user-images.githubusercontent.com/76455740/234173103-5ec1f6ca-e5c9-4543-b143-0e9a6885cc18.png)
 
-Main--Ui
-Ui--Game_logic
-
-```mermaid
-sequenceDiagram
-User->>main:Launch game
-main->>ui:Executes final()
-ui->>config:requests fps
-config->>ui:Delivers fps
-ui->>game_logic:Requests grid and piece from game logic
-game_logic->>config:requests config
-config->>game_logic:Delivers config
-game_logic->>ui:Delivers grid and piece
-ui->>game_logic:Moves piece down
+![chrome_mrpqo2OTUA](https://user-images.githubusercontent.com/76455740/234173115-d41d15cc-15a2-4c4b-afa9-12cd88f7e962.png)
