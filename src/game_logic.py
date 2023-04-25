@@ -79,7 +79,7 @@ class Pieces:
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
-                    if self.y_value + row * BSIZE >= WINDOW_HEIGHT-BSIZE*5:
+                    if self.y_value + row * BSIZE >= WINDOW_HEIGHT-BSIZE:
                         return True
                     if self.x_value + column * BSIZE < 0:
                         return True
