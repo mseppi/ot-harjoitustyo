@@ -52,46 +52,46 @@ class Pieces:
         shape_id = random.randrange(len(shapes))
         self.shape = shapes[shape_id]
         self.color = shape_colors[shape_id]
-        self.x = WINDOW_WIDTH // 2 - len(self.shape[0]) // 2
-        self.y = 0
+        self.x_value = WINDOW_WIDTH // 2 - len(self.shape[0]) // 2
+        self.y_value = 0
 
     def draw(self, screen):
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
                     pygame.draw.rect(screen, (self.color), (
-                        self.x + column * BSIZE, self.y + row * BSIZE, BSIZE, BSIZE))
+                        self.x_value + column * BSIZE, self.y_value + row * BSIZE, BSIZE, BSIZE))
 
     def rotate(self):
         self.shape = list(zip(*self.shape[::-1]))
 
     def down(self):
-        self.y += BSIZE
+        self.y_value += BSIZE
 
     def left(self):
-        self.x -= BSIZE
+        self.x_value -= BSIZE
 
     def right(self):
-        self.x += BSIZE
+        self.x_value += BSIZE
 
     def collision(self):
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
-                    if self.y + row * BSIZE >= WINDOW_HEIGHT-BSIZE*5:
+                    if self.y_value + row * BSIZE >= WINDOW_HEIGHT-BSIZE*5:
                         return True
-                    if self.x + column * BSIZE < 0:
+                    if self.x_value + column * BSIZE < 0:
                         return True
-                    if self.x + column * BSIZE >= WINDOW_WIDTH:
+                    if self.x_value + column * BSIZE >= WINDOW_WIDTH:
                         return True
-                    return False
+        return False
 
     def freeze(self):
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
                     frozen_blocks.append(
-                        (self.x + column * BSIZE, self.y + row * BSIZE, self.color))
+                        (self.x_value + column * BSIZE, self.y_value + row * BSIZE, self.color))
 
     def new_piece(self):
         self.freeze()
@@ -108,7 +108,7 @@ class Grid:
     def create_grid(self):
         for row in range(self.rows):
             self.grid.append([])
-            for column in range(self.columns):
+            for _column in range(self.columns):
                 self.grid[row].append(0)
 
     def draw(self, screen):
@@ -119,7 +119,7 @@ class Grid:
             pygame.draw.line(screen, (GRAY), (column * BSIZE, 0),
                              (column * BSIZE, WINDOW_HEIGHT))
 
-    def draw_frozen_blocks(self, screen, piece):
+    def draw_frozen_blocks(self, screen):
         for block in frozen_blocks:
             pygame.draw.rect(screen, (block[2]), (block[0], block[1], BSIZE, BSIZE))
 
@@ -129,7 +129,7 @@ class Grid:
                 self.grid.pop(row)
                 self.grid.insert(0, [0 for _ in range(self.columns)])
 
-    def draw_grid(self, screen, piece):
+    def draw_grid(self, screen):
         self.draw(screen)
-        self.draw_frozen_blocks(screen, piece)
+        self.draw_frozen_blocks(screen)
         self.check_rows()

@@ -14,7 +14,7 @@ def final():
     # Quitting game possible + moving
     left_moving = False
     right_moving = False
-    down_moving = False
+    #down_moving = False
 
     while True:
         for event in pygame.event.get():
@@ -39,7 +39,7 @@ def final():
                     down_moving = False
 
         screen.fill((0, 0, 0))
-        game.draw_grid(screen, piece)
+        game.draw_grid(screen)
 
         if left_moving:
             piece.left()
