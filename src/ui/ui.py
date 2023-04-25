@@ -10,6 +10,7 @@ def final():
     clock = pygame.time.Clock()
     game = Grid()
     piece = Pieces()
+    game.draw(screen)
 
     # Quitting game possible + moving
     left_moving = False
@@ -50,6 +51,7 @@ def final():
             if not piece.collision():
                 piece.down()
             else:
+                game.draw_frozen_blocks(screen, piece)
                 piece.new_piece()
         piece.down()
         piece.draw(screen)
