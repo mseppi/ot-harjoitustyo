@@ -29,3 +29,8 @@ class TestPieces(unittest.TestCase):
         test_shape = piece.shape
         piece.rotate()
         assert piece.shape != test_shape
+
+    def test_pieces_collision(self):
+        piece = Pieces()
+        piece.y = WINDOW_HEIGHT - BSIZE * 5
+        assert piece.collision() == True
