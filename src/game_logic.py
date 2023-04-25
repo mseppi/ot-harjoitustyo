@@ -94,12 +94,7 @@ class Pieces:
 
     def new_piece(self):
         self.freeze()
-        self.frozen_blocks = []
-        shape_id = random.randrange(len(shapes))
-        self.shape = shapes[shape_id]
-        self.color = shape_colors[shape_id]
-        self.x = WINDOW_WIDTH // 2 - len(self.shape[0]) // 2
-        self.y = 0
+        self.__init__()
 
 class Grid:
 

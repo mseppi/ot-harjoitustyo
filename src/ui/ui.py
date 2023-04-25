@@ -39,7 +39,7 @@ def final():
                     down_moving = False
 
         screen.fill((0, 0, 0))
-        game.draw_grid(screen, piece.frozen_blocks)
+        game.draw(screen)
 
         if left_moving:
             piece.left()
