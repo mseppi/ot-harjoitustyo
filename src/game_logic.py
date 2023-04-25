@@ -56,11 +56,12 @@ class Pieces:
         self.y_value = 0
 
     def draw(self, screen):
-        for row in range(len(self.shape)):
-            for column in range(len(self.shape[0])):
-                if self.shape[row][column] != 0:
-                    pygame.draw.rect(screen, (self.color), (
-                        self.x_value + column * BSIZE, self.y_value + row * BSIZE, BSIZE, BSIZE))
+        for row_index, row in enumerate(self.shape):
+            for column_index, value in enumerate(row):
+                if value != 0:
+                    x_value = self.x_value + column_index * BSIZE
+                    y_value = self.y_value + row_index * BSIZE
+                    pygame.draw.rect(screen, self.color, (x_value, y_value, BSIZE, BSIZE))
 
     def rotate(self):
         self.shape = list(zip(*self.shape[::-1]))
@@ -78,7 +79,7 @@ class Pieces:
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
-                    if self.y_value + row * BSIZE >= WINDOW_HEIGHT-BSIZE:
+                    if self.y_value + row * BSIZE >= WINDOW_HEIGHT-BSIZE*5:
                         return True
                     if self.x_value + column * BSIZE < 0:
                         return True
