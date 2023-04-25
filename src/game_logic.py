@@ -44,6 +44,7 @@ shape_colors = {
     5: ORANGE,
     6: BLUE
 }
+frozen_blocks = []
 
 class Pieces:
     def __init__(self):
@@ -52,7 +53,6 @@ class Pieces:
         self.color = shape_colors[shape_id]
         self.x = WINDOW_WIDTH // 2 - len(self.shape[0]) // 2
         self.y = 0
-        self.frozen_blocks = []
 
     def draw(self, screen):
         for row in range(len(self.shape)):
@@ -89,7 +89,7 @@ class Pieces:
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
-                    self.frozen_blocks.append(
+                    frozen_blocks.append(
                         (self.x + column * BSIZE, self.y + row * BSIZE, self.color))
 
     def new_piece(self):
@@ -119,7 +119,7 @@ class Grid:
                              (column * BSIZE, WINDOW_HEIGHT))
 
     def draw_frozen_blocks(self, screen, piece):
-        for block in piece.frozen_blocks:
+        for block in frozen_blocks:
             pygame.draw.rect(screen, (block[2]), (block[0], block[1], BSIZE, BSIZE))
 
     def check_rows(self):
