@@ -2,7 +2,15 @@
 
 Sovellus on peli, jossa tippuu erinäköisiä palikoita. Pelin tarkoituksena on tehdä palikoista suoranainen rivi, jolloin rivi häviää ja pisteitä kertyy. Peli päättyy, kun palikat kertyvät ruudun yläreunaan asti.
 
-## Pytyhon-versio
+## Pelin kontrollit
+
+Vasen nuoli: Liiku vasemmalle
+
+Oikea nuoli: Liiku oikealle
+
+Nuoli ylös: Pyöritä tetris-palikkaa
+
+## Python-versio
 Sovelluksen toiminta on testattu pythonin versioilla 3.10.6. Vanhemmilla tai jopa uudemmillakin python-versioilla voi esiintyä ongelmia.
 
 ## Dokumentaatio
