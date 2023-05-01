@@ -1,7 +1,7 @@
 import random
 import pygame
-from config import WINDOW_HEIGHT, WINDOW_WIDTH, BSIZE
-from constants import *
+from variables.config import WINDOW_HEIGHT, WINDOW_WIDTH, BSIZE
+from variables.constants import *
 
 class Grid:
 
