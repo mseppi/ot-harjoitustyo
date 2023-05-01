@@ -1,5 +1,5 @@
 import unittest
-from services.game_logic import *
+from services.piece import *
 
 
 class TestPieces(unittest.TestCase):
