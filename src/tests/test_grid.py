@@ -1,5 +1,5 @@
 import unittest
-from game_logic import *
+from services.game_logic import *
 
 class TestGrid(unittest.TestCase):
     def setUp(self):

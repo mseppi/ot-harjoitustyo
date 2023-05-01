@@ -1,5 +1,5 @@
 import pygame
-from game_logic import *
+from services.game_logic import *
 from config import FPS
 pygame.init()
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
