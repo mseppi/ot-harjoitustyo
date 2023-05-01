@@ -33,8 +33,12 @@ class Grid:
         for row in range(self.rows):
             if 0 not in self.grid[row]:
                 self.grid.pop(row)
-                self.grid.insert(0, [0 for _ in range(self.columns)])
-
+                self.grid.insert(0, [0 for _column in range(self.columns)])
+                for block in frozen_blocks:
+                    if block[1] < row * BSIZE:
+                        block[1] += BSIZE
+                global score
+                score += 10
     def draw_grid(self, screen):
         self.draw(screen)
         self.draw_frozen_blocks(screen)
