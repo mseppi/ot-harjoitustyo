@@ -1,6 +1,7 @@
 import pygame
 from services.piece import Pieces
-from variables.config import FPS, WINDOW_HEIGHT, WINDOW_WIDTH
+from variables.config import FPS, WINDOW_HEIGHT, WINDOW_WIDTH, BSIZE
+from variables.constants import *
 from services.grid import Grid
 pygame.init()
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
@@ -23,9 +24,9 @@ def final():
                 pygame.quit()
                 return
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT:
+                if event.key == pygame.K_LEFT and piece.x_value > 0:
                     left_moving = True
-                elif event.key == pygame.K_RIGHT:
+                elif event.key == pygame.K_RIGHT and piece.x_value < WINDOW_WIDTH - len(piece.shape[0]) * BSIZE:
                     right_moving = True
 #                elif event.key == pygame.K_DOWN:
                     down_moving = True
@@ -39,12 +40,12 @@ def final():
 #                elif event.key == pygame.K_DOWN:
                     down_moving = False
 
-        screen.fill((0, 0, 0))
+        screen.fill((BLACK))
         game.draw_grid(screen)
 
-        if left_moving:
+        if left_moving and not piece.wall_collision():
             piece.left()
-        if right_moving:
+        if right_moving and not piece.wall_collision():
             piece.right()
 #       if down_moving:
             piece.down()

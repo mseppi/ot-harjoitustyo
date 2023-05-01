@@ -38,9 +38,16 @@ class Pieces:
                 if self.shape[row][column] != 0:
                     if self.y_value + row * BSIZE >= WINDOW_HEIGHT-BSIZE:
                         return True
-                    if self.x_value + column * BSIZE < 0:
-                        return True
-                    if self.x_value + column * BSIZE >= WINDOW_WIDTH:
+                    for block in frozen_blocks:
+                        if self.x_value + column * BSIZE == block[0] and self.y_value + row * BSIZE + BSIZE == block[1]:
+                            return True
+        return False
+    
+    def wall_collision(self):
+        for row in range(len(self.shape)):
+            for column in range(len(self.shape[0])):
+                if self.shape[row][column] != 0:
+                    if self.x_value + column * BSIZE < 0 or self.x_value + column * BSIZE > WINDOW_WIDTH-BSIZE*2:
                         return True
         return False
 
