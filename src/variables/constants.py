@@ -1,5 +1,6 @@
-# Make blocks
-shapes = [
+""" This file contains all the constant variables used in the game
+"""
+shapes= [
     [
         [0, 0, 0, 0, 0],
         [0, 0, 1, 0, 0],

@@ -5,7 +5,11 @@ from variables.constants import *
 
 
 class Pieces:
+    """Class for the pieces that fall down
+    """
     def __init__(self):
+        """Constructor for the Pieces class
+        """
         shape_id = random.randrange(len(shapes))
         self.shape = shapes[shape_id]
         self.color = shape_colors[shape_id]
@@ -13,6 +17,11 @@ class Pieces:
         self.y_value = 0 - BSIZE * 5
 
     def draw(self, screen):
+        """Draws the piece on the screen
+
+        Args:
+            screen (pygame.Surface): The screen to draw the piece on
+        """
         for row_index, row in enumerate(self.shape):
             for column_index, value in enumerate(row):
                 if value != 0:
@@ -21,21 +30,36 @@ class Pieces:
                     pygame.draw.rect(screen, self.color, (x_value, y_value, BSIZE, BSIZE))
 
     def rotate(self):
+        """Rotates the piece
+        """
         self.shape = list(zip(*self.shape[::-1]))
 
     def reverse_rotate(self):
+        """Reverses the rotation of the piece
+        """
         self.shape = list(zip(*self.shape))[::-1]
 
     def down(self):
+        """Moves the piece down
+        """
         self.y_value += BSIZE
 
     def left(self):
+        """Moves the piece left
+        """
         self.x_value -= BSIZE
 
     def right(self):
+        """Moves the piece right
+        """
         self.x_value += BSIZE
 
     def collision(self):
+        """Checks if the piece collides with the bottom of the screen or with another piece
+        
+        Returns:
+            bool: True if the piece collides, False otherwise
+        """
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
@@ -47,6 +71,11 @@ class Pieces:
         return False
     
     def left_wall_collision(self):
+        """Checks if the piece collides with the left wall
+        
+        Returns:
+            bool: True if the piece collides, False otherwise
+        """
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
@@ -55,6 +84,11 @@ class Pieces:
         return False
 
     def right_wall_collision(self):
+        """Checks if the piece collides with the right wall
+
+        Returns:
+            bool: True if the piece collides, False otherwise
+        """
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
@@ -63,9 +97,16 @@ class Pieces:
         return False
     
     def wall_collision(self):
+        """Checks if the piece collides with the left or right wall
+
+        Returns:
+            bool: True if the piece collides, False otherwise
+        """
         return self.left_wall_collision() or self.right_wall_collision()
     
     def freeze(self):
+        """Freezes the piece in place
+        """
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
@@ -73,6 +114,8 @@ class Pieces:
                         (self.x_value + column * BSIZE, self.y_value + row * BSIZE, self.color))
 
     def new_piece(self):
+        """Creates a new piece and freezes the current one
+        """
         self.freeze()
         self.__init__()
     

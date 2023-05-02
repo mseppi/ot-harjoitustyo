@@ -9,6 +9,8 @@ pygame.display.set_caption("Tetris")
 
         
 def final():
+    """The main function for the game
+    """
     clock = pygame.time.Clock()
     game = Grid()
     piece = Pieces()
