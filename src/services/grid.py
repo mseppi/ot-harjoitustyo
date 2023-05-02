@@ -22,7 +22,7 @@ class Grid:
         for row in range(self.rows+1):
             pygame.draw.line(screen, (GRAY), (0, row * BSIZE),
                              (WINDOW_WIDTH, row * BSIZE))
-        for column in range(self.columns):
+        for column in range(self.columns+1):
             pygame.draw.line(screen, (GRAY), (column * BSIZE, 0),
                              (column * BSIZE, WINDOW_HEIGHT))
 
