@@ -20,7 +20,6 @@ def final():
 
     while True:
         game = Grid()
-        print(game.grid)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
