@@ -8,3 +8,8 @@ class TestGrid(unittest.TestCase):
     def test_grid_create(self):
         grid = Grid()
         assert grid.grid != []
+
+    def test_create_grid(self):
+        grid = Grid()
+        grid.create_grid()
+        assert grid.grid != []

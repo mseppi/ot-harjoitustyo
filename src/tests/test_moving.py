@@ -33,6 +33,30 @@ class TestPieces(unittest.TestCase):
     def test_pieces_collision(self):
         piece = Pieces()
         piece.y = WINDOW_HEIGHT - BSIZE
-        for i in range(20):
+        for i in range(23):
             piece.down()
         assert piece.collision() == True
+
+    def test_pieces_reverse_rotate(self):
+        piece = Pieces()
+        test_shape = piece.shape
+        piece.reverse_rotate()
+        assert piece.shape != test_shape
+
+    def test_pieces_left_wall_collision(self):
+        piece = Pieces()
+        for i in range(10):
+            piece.left()
+        assert piece.left_wall_collision() == True
+
+    def test_pieces_right_wall_collision(self):
+        piece = Pieces()
+        for i in range(10):
+            piece.right()
+        assert piece.right_wall_collision() == True
+    
+    def test_freeze(self):
+        piece = Pieces()
+        piece.freeze()
+        assert frozen_blocks != []
+        
