@@ -8,12 +8,12 @@ Sovellus tulee olemaan klassinen Tetris-videopeli, jossa tarkoituksena tehdä va
 
 - Kuvioiden liikuttelu vasemmalle ja oikealle (ja alas) TEHTY
 - Kuvioiden tuleminen satunnaisesti TEHTY
-- Kuvioiden törmääminen TEHTY
-- Pelikenttä TEHTY (osittain)
+- Kuvioiden törmääminen TEHTY PAREMMIN
+- Pelikenttä TEHTY
 - Kuvioiden pyörittäminen TEHTY
 - Highscore-systeemi
-- Kuvioiden häviäminen kun niitä on kokonainen rivi kasassa
-- Pistemäärä
+- Kuvioiden häviäminen kun niitä on kokonainen rivi kasassa(PISTEMÄÄRÄ TULEE MUTTA KUVIOT EIVÄT LÄHDE)
+- Pistemäärä TEHTY
 - Pelin loppuminen kun kuviot kasautuvat ruudun yläreunaan
 - Pelin nopeutuminen riippuen pistemäärästä
 
