@@ -43,14 +43,25 @@ class Pieces:
                             return True
         return False
     
-    def wall_collision(self):
+    def left_wall_collision(self):
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
                 if self.shape[row][column] != 0:
-                    if self.x_value + column * BSIZE < 0 or self.x_value + column * BSIZE > WINDOW_WIDTH-BSIZE*2:
+                    if self.x_value + column * BSIZE < 0-BSIZE:
                         return True
         return False
 
+    def right_wall_collision(self):
+        for row in range(len(self.shape)):
+            for column in range(len(self.shape[0])):
+                if self.shape[row][column] != 0:
+                    if self.x_value + column * BSIZE > WINDOW_WIDTH-BSIZE:
+                        return True
+        return False
+    
+    def wall_collision(self):
+        return self.left_wall_collision() or self.right_wall_collision()
+    
     def freeze(self):
         for row in range(len(self.shape)):
             for column in range(len(self.shape[0])):
@@ -61,3 +72,4 @@ class Pieces:
     def new_piece(self):
         self.freeze()
         self.__init__()
+    

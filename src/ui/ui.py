@@ -32,6 +32,10 @@ def final():
                     down_moving = True
                 elif event.key == pygame.K_UP:
                     piece.rotate()
+                    if piece.left_wall_collision():
+                        piece.right()
+                    if piece.right_wall_collision():
+                        piece.left()
             elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT:
                     left_moving = False
@@ -43,10 +47,14 @@ def final():
         screen.fill((BLACK))
         game.draw_grid(screen)
 
-        if left_moving and not piece.wall_collision():
+        if left_moving:
             piece.left()
-        if right_moving and not piece.wall_collision():
+            if piece.left_wall_collision():
+                piece.right()
+        if right_moving:
             piece.right()
+            if piece.right_wall_collision():
+                piece.left()
 #       if down_moving:
             piece.down()
         if piece.collision():
