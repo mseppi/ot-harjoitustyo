@@ -1,10 +1,10 @@
 import pygame
 from services.piece import Pieces
-from variables.config import FPS, WINDOW_HEIGHT, WINDOW_WIDTH, BSIZE
+from variables.config import *
 from variables.constants import *
 from services.grid import Grid
 pygame.init()
-screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+screen = pygame.display.set_mode((UI_WINDOW_WIDTH, UI_WINDOW_HEIGHT))
 pygame.display.set_caption("Tetris")
 
         
