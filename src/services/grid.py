@@ -14,9 +14,9 @@ class Grid:
 
     def create_grid(self):
         for row in range(self.rows):
-            self.grid.append([])
-            for _column in range(self.columns):
-                self.grid[row].append(0)
+            self.grid.append([(0, 0, 0) for _column in range(self.columns)])
+        for block in frozen_blocks:
+            self.grid[block[1] // BSIZE][block[0] // BSIZE] = block[2]
 
     def draw(self, screen):
         for row in range(self.rows+1):
@@ -31,14 +31,12 @@ class Grid:
             pygame.draw.rect(screen, (block[2]), (block[0], block[1], BSIZE, BSIZE))
 
     def check_rows(self):
-        for row in range(self.rows):
-            if 0 not in self.grid[row]:
-                self.grid.pop(row)
-                self.grid.insert(0, [0 for _column in range(self.columns)])
-                for block in frozen_blocks:
-                    if block[1] < row * BSIZE:
-                        block[1] += BSIZE
-                self.score += 1
+        inc = 0
+        for row in self.grid:
+            if (0, 0, 0) not in row:
+                self.grid.pop(inc)
+                self.grid.insert(0, [(0, 0, 0) for _column in range(self.columns)])
+                self.score += 10
     
     def draw_score(self, screen):
         font = pygame.font.SysFont('comicsans', 30)
