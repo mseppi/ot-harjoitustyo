@@ -10,7 +10,7 @@ class Pieces:
         self.shape = shapes[shape_id]
         self.color = shape_colors[shape_id]
         self.x_value = WINDOW_WIDTH // 2 - len(self.shape[0]) // 2
-        self.y_value = 0
+        self.y_value = 0 - BSIZE * 5
 
     def draw(self, screen):
         for row_index, row in enumerate(self.shape):
@@ -22,6 +22,9 @@ class Pieces:
 
     def rotate(self):
         self.shape = list(zip(*self.shape[::-1]))
+
+    def reverse_rotate(self):
+        self.shape = list(zip(*self.shape))[::-1]
 
     def down(self):
         self.y_value += BSIZE
