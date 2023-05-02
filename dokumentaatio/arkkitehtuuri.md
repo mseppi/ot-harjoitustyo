@@ -44,6 +44,7 @@ constants->>piece: Delivers them
 piece->>ui: Delivers piece to ui
 ui->>piece: requests piece moving down function
 piece->>ui: Moves piece down
+```
 
 Ohessa kuvataan tilannetta, jossa käyttäjä käynnistää pelin ja kuvio tippuu yhden palkin alas. Tässä grid luo gridin ja pieces hakee variables-kansiosta satunnaisen palikan, jolle määritellään myös sitä kuvaava väri. Pieces-luokasta myös kutsutaan kuvion alaspäin menemistä, jolloin kuvio liikkuu yhden palkin alas.
 
@@ -53,6 +54,6 @@ Ohessa kuvataan tilannetta, jossa käyttäjä käynnistää pelin ja kuvio tippu
 
 Graaffista käyttöliittymää voisi vähän eheyttää.
 
-### Koodin
+### Koodi
 
-Koodia olisi voinut myös jakaa ehkä hieman järkevämmin
+Koodia olisi voinut myös jakaa ehkä hieman järkevämmin useampaan eri osioon.
