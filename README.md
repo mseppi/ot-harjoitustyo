@@ -23,6 +23,8 @@ Sovelluksen toiminta on testattu pythonin versioilla 3.10.6. Vanhemmilla tai jop
 
 [Arkkitehtuurikuvaus](https://github.com/mseppi/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
 
+Käyttöohje](https://github.com/mseppi/ot-harjoitustyo/blob/main/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
+
 ## Asennus
 
 1. Asenna riippuvuudet komennolla
