@@ -24,10 +24,14 @@ def final():
                 pygame.quit()
                 return
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT and piece.x_value > 0:
-                    left_moving = True
-                elif event.key == pygame.K_RIGHT and piece.x_value < WINDOW_WIDTH - len(piece.shape[0]) * BSIZE:
-                    right_moving = True
+                if event.key == pygame.K_LEFT:
+                    piece.left()
+                    if piece.left_wall_collision():
+                        piece.right()
+                elif event.key == pygame.K_RIGHT:
+                    piece.right()
+                    if piece.right_wall_collision():
+                        piece.left()
 #                elif event.key == pygame.K_DOWN:
                     down_moving = True
                 elif event.key == pygame.K_UP:
@@ -36,27 +40,10 @@ def final():
                         piece.right()
                     if piece.right_wall_collision():
                         piece.left()
-            elif event.type == pygame.KEYUP:
-                if event.key == pygame.K_LEFT:
-                    left_moving = False
-                elif event.key == pygame.K_RIGHT:
-                    right_moving = False
-#                elif event.key == pygame.K_DOWN:
-                    down_moving = False
 
         screen.fill((BLACK))
         game.draw_grid(screen)
 
-        if left_moving:
-            piece.left()
-            if piece.left_wall_collision():
-                piece.right()
-        if right_moving:
-            piece.right()
-            if piece.right_wall_collision():
-                piece.left()
-#       if down_moving:
-            piece.down()
         if piece.collision():
             piece.new_piece()
         piece.down()
