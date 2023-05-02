@@ -59,7 +59,6 @@ def final():
             piece.down()
         if piece.collision():
             piece.new_piece()
-        game.check_rows()
         piece.down()
         piece.draw(screen)
         pygame.display.update()

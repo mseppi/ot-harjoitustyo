@@ -10,6 +10,7 @@ class Grid:
         self.rows = WINDOW_HEIGHT // BSIZE
         self.columns = WINDOW_WIDTH // BSIZE
         self.create_grid()
+        self.score = 0
 
     def create_grid(self):
         for row in range(self.rows):
@@ -21,7 +22,7 @@ class Grid:
         for row in range(self.rows+1):
             pygame.draw.line(screen, (GRAY), (0, row * BSIZE),
                              (WINDOW_WIDTH, row * BSIZE))
-        for column in range(self.columns+1):
+        for column in range(self.columns):
             pygame.draw.line(screen, (GRAY), (column * BSIZE, 0),
                              (column * BSIZE, WINDOW_HEIGHT))
 
@@ -37,9 +38,15 @@ class Grid:
                 for block in frozen_blocks:
                     if block[1] < row * BSIZE:
                         block[1] += BSIZE
-                global score
-                score += 10
+                self.score += 1
+    
+    def draw_score(self, screen):
+        font = pygame.font.SysFont('comicsans', 30)
+        label = font.render(f'Score: {self.score}', 1, (WHITE))
+        screen.blit(label, (600, 700))
+
     def draw_grid(self, screen):
         self.draw(screen)
         self.draw_frozen_blocks(screen)
         self.check_rows()
+        self.draw_score(screen)
