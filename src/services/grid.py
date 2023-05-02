@@ -1,7 +1,6 @@
-import random
 import pygame
 from variables.config import WINDOW_HEIGHT, WINDOW_WIDTH, BSIZE
-from variables.constants import *
+from variables.constants import frozen_blocks, GRAY, WHITE
 
 class Grid:
     """Class for the grid
@@ -19,7 +18,7 @@ class Grid:
     def create_grid(self):
         """Creates the grid
         """
-        for row in range(self.rows):
+        for _ in range(self.rows):
             self.grid.append([(0, 0, 0) for _column in range(self.columns)])
         for block in frozen_blocks:
             self.grid[block[1] // BSIZE][block[0] // BSIZE] = block[2]
@@ -55,10 +54,10 @@ class Grid:
                 self.grid.pop(inc)
                 self.grid.insert(0, [(0, 0, 0) for _column in range(self.columns)])
                 self.score += 10
-    
+
     def draw_score(self, screen):
         """Draws the score on the screen
-        
+
         Args:
             screen (pygame.Surface): The screen to draw the score on
         """

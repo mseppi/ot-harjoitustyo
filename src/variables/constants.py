@@ -58,8 +58,6 @@ shapes= [
     ]
 ]
 
-
-#define colors
 PURPLE = (148, 0, 211)
 YELLOW = (255, 255, 0)
 GREEN = (0, 255, 0)
