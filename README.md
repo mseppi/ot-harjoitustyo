@@ -10,6 +10,8 @@ Oikea nuoli: Liiku oikealle
 
 Nuoli ylös: Pyöritä tetris-palikkaa
 
+Spacebar: Pyöritä tetris-palikkaa toiseen suuntaan.
+
 ## Python-versio
 Sovelluksen toiminta on testattu pythonin versioilla 3.10.6. Vanhemmilla tai jopa uudemmillakin python-versioilla voi esiintyä ongelmia.
 
