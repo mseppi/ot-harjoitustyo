@@ -14,6 +14,7 @@ class Grid:
         self.columns = WINDOW_WIDTH // BSIZE
         self.create_grid()
         self.score = 0
+        self.level = 1
 
     def create_grid(self):
         """Creates the grid
