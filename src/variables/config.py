@@ -1,6 +1,6 @@
 """ This file contains all the changeable variables used in the game
 """
-FPS = 10
+FPS = 60
 BSIZE = 40
 SPEED = 5
 WINDOW_WIDTH = 400

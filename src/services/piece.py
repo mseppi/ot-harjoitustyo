@@ -33,26 +33,41 @@ class Pieces:
         """Rotates the piece
         """
         self.shape = list(zip(*self.shape[::-1]))
+        if self.wall_collision() or self.collision():
+            self.reverse_rotate()
 
     def reverse_rotate(self):
         """Reverses the rotation of the piece
         """
         self.shape = list(zip(*self.shape))[::-1]
+        if self.wall_collision() or self.collision():
+            self.rotate()
 
     def down(self):
         """Moves the piece down
         """
         self.y_value += BSIZE
+        if self.collision():
+            self.new_piece()
 
     def left(self):
         """Moves the piece left
         """
         self.x_value -= BSIZE
+        if self.wall_collision() or self.collision():
+            self.x_value += BSIZE
 
     def right(self):
         """Moves the piece right
         """
         self.x_value += BSIZE
+        if self.wall_collision() or self.collision():
+            self.x_value -= BSIZE
+
+    def up(self):
+        """Moves the piece up
+        """
+        self.y_value -= BSIZE
 
     def collision(self):
         """Checks if the piece collides with the bottom of the screen or with another piece
@@ -122,3 +137,21 @@ class Pieces:
         self.freeze()
         self.__init__()
     
+    def events(self, event):
+        """Handles the events for the piece
+
+        Args:
+            event (pygame.event): The event to handle
+        """
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_DOWN:
+                self.down()
+            if event.key == pygame.K_LEFT:
+                self.left()
+            if event.key == pygame.K_RIGHT:
+                self.right()
+            if event.key == pygame.K_UP:
+                self.rotate()
