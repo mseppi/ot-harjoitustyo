@@ -85,8 +85,6 @@ class Grid:
                 frozen_blocks[i] = (frozen_blocks[i][0], frozen_blocks[i][1] + BSIZE, frozen_blocks[i][2])
 
 
-
-                    
     def draw_score(self, screen):
         """Draws the score on the screen
 
@@ -98,10 +96,11 @@ class Grid:
         screen.blit(label, (600, 700))
 
     def check_level(self):
-        """Checks the level
+        """Checks the level and increases it if necessary
         """
         if self.score // self.level >= 20:
             self.level += 1
+
 
 
     def draw_grid(self, screen):
@@ -111,5 +110,4 @@ class Grid:
         self.remove_rows()
         self.draw_score(screen)
         self.check_level()
-        print(self.level)
 
