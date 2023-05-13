@@ -15,6 +15,8 @@ class Grid:
         self.create_grid()
         self.score = 0
         self.level = 1
+        self.digit = []
+        global frozen_blocks
 
     def create_grid(self):
         """Creates the grid
@@ -44,18 +46,49 @@ class Grid:
             screen (pygame.Surface): The screen to draw the frozen blocks on
         """
         for block in frozen_blocks:
-            pygame.draw.rect(screen, (block[2]), (block[0], block[1], BSIZE, BSIZE))
+            pygame.draw.rect(screen, block[2], (block[0], block[1], BSIZE, BSIZE))
 
-    def check_rows(self):
-        """Checks if a row is full
+
+    def remove_rows(self):
+        """Removes the rows that are full
         """
-        inc = 0
-        for row in self.grid:
+        global frozen_blocks
+        frozen_blocks_temp = []
+        blocks_removed = False
+        rows_removed = []
+        for i in range(len(self.grid)-1, -1, -1):
+            row = self.grid[i]
             if (0, 0, 0) not in row:
-                self.grid.pop(inc)
-                self.grid.insert(0, [(0, 0, 0) for _column in range(self.columns)])
-                self.score += 10
+                for j in frozen_blocks:
+                    if j[1] == i * BSIZE:
+                        frozen_blocks_temp.append(j)
+                rows_removed.append(i)
+                
+        inc = 1
+        for i in frozen_blocks_temp:
+            frozen_blocks.remove(i)
+            blocks_removed = True
+        for i in rows_removed:
+            self.move_down(i, inc)
+            inc += 1
+        if blocks_removed:
+            self.score += 1
 
+
+    def move_down(self, row, inc):
+        """Moves the rows above this row down
+
+        Args:
+            row (int): The row to move the blocks down from
+        """
+        global frozen_blocks
+        for i in range(len(frozen_blocks)):
+            if frozen_blocks[i][1] < (row + inc) * BSIZE:
+                frozen_blocks[i] = (frozen_blocks[i][0], frozen_blocks[i][1] + BSIZE, frozen_blocks[i][2])
+
+
+
+                    
     def draw_score(self, screen):
         """Draws the score on the screen
 
@@ -67,12 +100,9 @@ class Grid:
         screen.blit(label, (600, 700))
 
     def draw_grid(self, screen):
-        """Draws the grid on the screen
-
-        Args:
-            screen (pygame.Surface): The screen to draw the grid on
-        """
         self.draw(screen)
         self.draw_frozen_blocks(screen)
-        self.check_rows()
+        self.remove_rows()
         self.draw_score(screen)
+        print(self.digit)
+

@@ -13,12 +13,12 @@ def final(screen):
     counter = 0
 
     while running:
+        game = Grid()
         counter += 1
         if counter >= 100000:
             counter = 0
         if counter%(FPS // game.level // 2) == 0 or piece.downmoving:
             piece.down()
-        game = Grid()
         for event in pygame.event.get():
             piece.events(event)
         if piece.game_over():

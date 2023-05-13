@@ -78,4 +78,5 @@ shape_colors = {
     5: ORANGE,
     6: BLUE
 }
+
 frozen_blocks = []
