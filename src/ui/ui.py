@@ -13,7 +13,6 @@ def final(screen):
     counter = 0
 
     while running:
-        game = Grid()
         counter += 1
         if counter >= 100000:
             counter = 0

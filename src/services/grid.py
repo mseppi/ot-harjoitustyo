@@ -9,7 +9,6 @@ class Grid:
     def __init__(self):
         """Constructor for the Grid class
         """
-        self.grid = []
         self.rows = WINDOW_HEIGHT // BSIZE
         self.columns = WINDOW_WIDTH // BSIZE
         self.create_grid()
@@ -21,6 +20,8 @@ class Grid:
     def create_grid(self):
         """Creates the grid
         """
+        global frozen_blocks
+        self.grid = []
         for _ in range(self.rows):
             self.grid.append([(0, 0, 0) for _column in range(self.columns)])
         for block in frozen_blocks:
@@ -54,7 +55,6 @@ class Grid:
         """
         global frozen_blocks
         frozen_blocks_temp = []
-        blocks_removed = False
         rows_removed = []
         for i in range(len(self.grid)-1, -1, -1):
             row = self.grid[i]
@@ -67,12 +67,10 @@ class Grid:
         inc = 1
         for i in frozen_blocks_temp:
             frozen_blocks.remove(i)
-            blocks_removed = True
         for i in rows_removed:
             self.move_down(i, inc)
             inc += 1
-        if blocks_removed:
-            self.score += 1
+        self.score += len(rows_removed)**2
 
 
     def move_down(self, row, inc):
@@ -99,10 +97,19 @@ class Grid:
         label = font.render(f'Score: {self.score}', 1, (WHITE))
         screen.blit(label, (600, 700))
 
+    def check_level(self):
+        """Checks the level
+        """
+        if self.score // self.level >= 20:
+            self.level += 1
+
+
     def draw_grid(self, screen):
+        self.create_grid()
         self.draw(screen)
         self.draw_frozen_blocks(screen)
         self.remove_rows()
         self.draw_score(screen)
-        print(self.digit)
+        self.check_level()
+        print(self.level)
 
