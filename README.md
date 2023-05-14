@@ -1,16 +1,26 @@
-# Tetris sovellus
+# Tetris
 
-Sovellus on peli, jossa tippuu erinäköisiä palikoita. Pelin tarkoituksena on tehdä palikoista suoranainen rivi, jolloin rivi häviää ja pisteitä kertyy. Peli päättyy, kun palikat kertyvät ruudun yläreunaan asti.
+Tetris on peli, jossa tippuu vuorotellen erilaisia palikoita. Pelin ideana on saada täysi rivi palikoita jolloin pistesaldo kasvaa. Peli loppuu, kun palikat kasautuvat ruudun yläreunaan.
 
 ## Pelin kontrollit
 
-Vasen nuoli: Liiku vasemmalle
+### MAIN MENU
 
-Oikea nuoli: Liiku oikealle
+Enter: Aloita peli
+H: Näytä pistetaulukko
+Enter tai escape pistetaulukossa: Siirtyy takaisin menuun.
 
-Nuoli ylös: Pyöritä tetris-palikkaa
+### PELIN SISÄLLÄ
 
-Spacebar: Pyöritä tetris-palikkaa toiseen suuntaan.
+Nuolet vasemmalle, oikealle ja alas: Liikuta palikkaa
+Nuoli ylös: Pyöritä palikkaa
+Left control: Pyöritä palikkaa toiseen suuntaan
+Spacebar: Tiputa palikka välittömästi alas asti
+
+### PELIN LOPUKSI
+
+Jos sait huipputuloksen, kirjoita nimesi top-listalle. Nimi ei voi olla merkitön tai yli 10 merkkiä eikä se sisällä välilyöntejä.
+Loppupistetaulukko: Enter tai escape siirtyy sulkee pelin.
 
 ## Python-versio
 Sovelluksen toiminta on testattu pythonin versioilla 3.10.6. Vanhemmilla tai jopa uudemmillakin python-versioilla voi esiintyä ongelmia.
