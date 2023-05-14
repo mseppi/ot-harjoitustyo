@@ -20,3 +20,9 @@
 - Kuviot eivät enää mene toistensa tai seinän sisään
 - Formatointia parannettu: Grid ja pieces luokat erotettu omiin kansioihin
 - Variables services ja ui eriytetty toisistaan
+
+## Viikko 8
+- Pistesysteemi korjattu valmiiksi
+- Palikoiden liikuttaminen toimii nyt kokonaan
+- Menu toimii suunitellusti
+- Tekstin piirtäminen Laitettu omaan luokkaansa
