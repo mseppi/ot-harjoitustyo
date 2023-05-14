@@ -44,9 +44,9 @@ class Text:
         self.screen.blit(text, text_rect)
         for i, highscore in enumerate(self.highscore_list):
             text = self.font.render(f"{i+1}. {highscore[0]}: {highscore[1]}", True, (255, 255, 255))
-            textRect = text.get_rect()
-            textRect.center = (UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2 - 150 + 50*i)
-            self.screen.blit(text, textRect)
+            text_rect = text.get_rect()
+            text_rect.center = (UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2 - 150 + 50*i)
+            self.screen.blit(text, text_rect)
         pygame.display.update()
 
 

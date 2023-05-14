@@ -3,7 +3,7 @@ from variables.config import *
 from variables.constants import *
 from ui.game import final
 from ui.highscore import highscore
-from services.text import Text
+from text.text import Text
 
 
 

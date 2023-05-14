@@ -38,6 +38,7 @@ class Grid:
             pygame.draw.line(screen, (GRAY), (column * BSIZE, 0),
                              (column * BSIZE, WINDOW_HEIGHT))
 
+
     def draw_frozen_blocks(self, screen):
         """Draws the frozen blocks on the screen
 
@@ -92,6 +93,7 @@ class Grid:
         screen.blit(label, (600, 700))
         label = font.render(f'Level: {self.level}', 1, (WHITE))
         screen.blit(label, (600, 750))
+
 
     def check_level(self):
         """Checks the level and increases it if necessary

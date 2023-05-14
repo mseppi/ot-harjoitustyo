@@ -1,7 +1,7 @@
 import pygame
 from variables.config import *
 from variables.constants import *
-from services.text import Text
+from text.text import Text
 
 def add_score(score, screen):
     """Adds a score to the highscore file

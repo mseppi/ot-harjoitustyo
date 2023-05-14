@@ -1,7 +1,7 @@
 import pygame
 from variables.config import *
 from variables.constants import *
-from services.text import Text
+from text.text import Text
 import os
 
 def highscore(screen):
