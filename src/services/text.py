@@ -1,7 +1,7 @@
 import os
 import pygame
 from variables.config import UI_WINDOW_HEIGHT, UI_WINDOW_WIDTH
-from variables.constants import RED, BLACK, dir
+from variables.constants import RED, BLACK, dir, WHITE
 
 
 class Text:
@@ -38,10 +38,10 @@ class Text:
         """Displays the highscore screen
         """
         self.screen.fill((BLACK))
-        text = self.font.render("Highscore", True, (BLACK))
-        textRect = text.get_rect()
-        textRect.center = (UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2 - 200)
-        self.screen.blit(text, textRect)
+        text = self.font.render("Highscore", True, (WHITE))
+        text_rect = text.get_rect()
+        text_rect.center = (UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2 - 200)
+        self.screen.blit(text, text_rect)
         for i, highscore in enumerate(self.highscore_list):
             text = self.font.render(f"{i+1}. {highscore[0]}: {highscore[1]}", True, (255, 255, 255))
             textRect = text.get_rect()
