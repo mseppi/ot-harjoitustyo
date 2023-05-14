@@ -4,7 +4,6 @@ from variables.config import *
 from variables.constants import *
 from variables.text import Text
 from services.grid import Grid
-from services.scores import *
 from ui.add_score import add_score
         
 def final(screen):
@@ -44,7 +43,7 @@ def final(screen):
         timer +=10
 
 
-    if is_score_highscore(game.score):
+    if text.is_score_highscore(game.score):
         add_score(game.score, screen)
         
     

@@ -7,4 +7,4 @@ bot,50
 bot,40
 bot,30
 koira,25
-bot,20
+koira,25

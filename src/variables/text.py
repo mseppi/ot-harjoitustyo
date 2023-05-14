@@ -53,15 +53,23 @@ class Text:
         Args:
             highscore_file (str): The path to the highscore file
         """
-        with open(self.highscore_file, 'r') as file:
-            for line in file:
-                name, score = line.strip().split(",")
-                self.highscore_list.append((name, int(score)))
         highscore = sorted(self.highscore_list, key=lambda x: x[1], reverse=True)
         highscore = highscore[:10]
         with open(self.highscore_file, 'w') as file:
             for name, score in highscore:
                 file.write(name + "," + str(score) + "\n")
+
+
+    def add_score_to_file(self, name, score):
+        """Adds a score to the highscore file
+
+        Args:
+            name (str): The name of the player
+            score (int): The score of the player
+        """
+        with open(self.highscore_file, 'a') as file:
+            file.write(name + "," + str(score) + "\n")
+        print ("Score added to file")
 
     def is_score_highscore(self, score):
         """Checks if the score is a highscore
