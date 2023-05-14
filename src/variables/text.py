@@ -5,7 +5,7 @@ import os
 
 
 class Text:
-    """Class for drawing text on the screen
+    """Class for drawing text on the screen and handling highscores
     """
     def __init__(self, screen):
         """Constructor for the Text class
@@ -31,6 +31,8 @@ class Text:
         self.screen.blit(text, textRect)
         pygame.display.update()
 
+    
+
     def highscore(self):
         self.screen.fill((BLACK))
         font = pygame.font.Font('freesansbold.ttf', 32)
@@ -44,3 +46,19 @@ class Text:
             textRect.center = (UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2 - 150 + 50*i)
             self.screen.blit(text, textRect)
         pygame.display.update()
+    
+    def remove_lowest_score(self):
+        """Removes the lowest score from the highscore file
+
+        Args:
+            highscore_file (str): The path to the highscore file
+        """
+        with open(self.highscore_file, 'r') as file:
+            for line in file:
+                name, score = line.strip().split(",")
+                self.highscore_list.append((name, int(score)))
+        highscore = sorted(self.highscore_list, key=lambda x: x[1], reverse=True)
+        highscore = highscore[:10]
+        with open(self.highscore_file, 'w') as file:
+            for name, score in highscore:
+                file.write(name + "," + str(score) + "\n")

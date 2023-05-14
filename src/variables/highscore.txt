@@ -3,8 +3,8 @@ Bot9,90
 Bot8,80
 Bot7,70
 Bot6,60
-kaarija,60
 Bot5,50
 Bot4,40
 Bot3,30
+kissa,25
 Bot2,20

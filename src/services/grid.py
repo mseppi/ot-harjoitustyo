@@ -12,7 +12,7 @@ class Grid:
         self.rows = WINDOW_HEIGHT // BSIZE
         self.columns = WINDOW_WIDTH // BSIZE
         self.create_grid()
-        self.score = 15
+        self.score = 25
         self.level = 1
         self.digit = []
         global frozen_blocks

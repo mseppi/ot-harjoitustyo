@@ -38,11 +38,12 @@ def final(screen):
         pygame.display.update()
         clock.tick(FPS)
 
-
+    text = Text(screen)
     while timer <1000:
-        text = Text(screen)
         text.game_over()
-        timer += clock.tick(10)
+        timer +=10
+
+        
 
     if is_score_highscore(game.score):
         add_score(game.score, screen)

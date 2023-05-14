@@ -21,7 +21,6 @@ def main_menu(screen):
                 process = False
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
-                    final(screen)
                     process = False
                 if event.key == pygame.K_h:
                     highscore(screen)
