@@ -43,7 +43,7 @@ def final(screen):
     text = Text(screen)
     while timer <1000:
         text.game_over()
-        timer +=10
+        timer +=1
 
 
     if text.is_score_highscore(game.score) and game.score > 0:
