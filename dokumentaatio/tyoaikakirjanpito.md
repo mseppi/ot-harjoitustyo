@@ -10,4 +10,7 @@
 |24.4    |8     |Koodin täydentämistä ja suunnittelua | 
 |1.5    |5     |Koodin täydentämistä ja suunnittelua | 
 |2.5    |7     |Koodin täydentämistä ja suunnittelua | 
-| yht   |35     | | 
+|12.5    |8     |Koodin täydentämistä ja suunnittelua | 
+|13.5    |7     |Koodin täydentämistä ja suunnittelua | 
+|14.5    |7     |Koodin täydentämistä ja viimeistelyä | 
+| yht   |57     | | 
