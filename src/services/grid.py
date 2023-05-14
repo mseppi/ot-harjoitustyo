@@ -9,19 +9,18 @@ class Grid:
     def __init__(self):
         """Constructor for the Grid class
         """
-        self.rows = WINDOW_HEIGHT // BSIZE
-        self.columns = WINDOW_WIDTH // BSIZE
+        self.__rows = WINDOW_HEIGHT // BSIZE
+        self.__columns = WINDOW_WIDTH // BSIZE
         self.create_grid()
         self.score = 0
         self.level = 1
-        self.digit = []
 
     def create_grid(self):
         """Creates the grid
         """
         self.grid = []
-        for _ in range(self.rows):
-            self.grid.append([(0, 0, 0) for _column in range(self.columns)])
+        for _ in range(self.__rows):
+            self.grid.append([(0, 0, 0) for _column in range(self.__columns)])
         for block in FROZEN_BLOCKS:
             self.grid[block[1] // BSIZE][block[0] // BSIZE] = block[2]
 
@@ -31,10 +30,10 @@ class Grid:
         Args:
             screen (pygame.Surface): The screen to draw the grid on
         """
-        for row in range(self.rows+1):
+        for row in range(self.__rows+1):
             pygame.draw.line(screen, (GRAY), (0, row * BSIZE),
                              (WINDOW_WIDTH, row * BSIZE))
-        for column in range(self.columns+1):
+        for column in range(self.__columns+1):
             pygame.draw.line(screen, (GRAY), (column * BSIZE, 0),
                              (column * BSIZE, WINDOW_HEIGHT))
 
