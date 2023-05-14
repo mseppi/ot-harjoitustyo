@@ -41,7 +41,7 @@ def final(screen):
         clock.tick(FPS)
 
     text = Text(screen)
-    while timer <1000:
+    while timer <800:
         text.game_over()
         timer +=1
 

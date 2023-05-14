@@ -1,5 +1,6 @@
 import random
 import pygame
+import sys
 from variables.config import WINDOW_HEIGHT, WINDOW_WIDTH, BSIZE
 from variables.constants import FROZEN_BLOCKS, shapes, shape_colors
 
@@ -146,8 +147,7 @@ class Pieces:
             event (pygame.event): The event to handle
         """
         if event.type == pygame.QUIT:
-            pygame.quit()
-            quit()
+            sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 self.left()

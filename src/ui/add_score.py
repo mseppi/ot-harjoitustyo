@@ -1,4 +1,5 @@
 import pygame
+import sys
 from variables.config import *
 from variables.constants import *
 from text.text import Text
@@ -22,8 +23,7 @@ def add_score(score, screen):
         pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
-                process = False
+                sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN and len(name) > 0:
                     process = False

@@ -1,10 +1,10 @@
 import pygame
+import sys
 from variables.config import *
 from variables.constants import *
 from ui.game import final
 from ui.highscore import highscore
 from text.text import Text
-
 
 
 
@@ -24,8 +24,7 @@ def main_menu(screen):
         pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
-                process = False
+                sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
                     process = False

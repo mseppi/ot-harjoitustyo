@@ -83,15 +83,11 @@ class Text:
         Returns:
             bool: True if the score is a highscore, False otherwise
         """
-        with open(self.highscore_file, 'r', encoding="utf8") as file:
-            for line in file:
-                name, score_file = line.strip().split(",")
-                self.highscore_list.append((name, int(score_file)))
-            if len(self.highscore_list) < 10:
+        if len(self.highscore_list) < 10:
+            return True
+        for i in self.highscore_list:
+            if score > i[1]:
                 return True
-            for i in self.highscore_list:
-                if score > i[1]:
-                    return True
         return False
 
 
