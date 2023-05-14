@@ -43,7 +43,6 @@ def final(screen):
         text.game_over()
         timer +=10
 
-        
 
     if is_score_highscore(game.score):
         add_score(game.score, screen)
