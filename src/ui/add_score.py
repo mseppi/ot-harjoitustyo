@@ -24,10 +24,12 @@ def add_score(score, screen):
             if event.type == pygame.QUIT:
                 process = False
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN:
+                if event.key == pygame.K_RETURN and len(name) > 0:
                     process = False
                 elif event.key == pygame.K_BACKSPACE:
                     name = name[:-1]
+                elif event.key == pygame.K_SPACE or event.key == pygame.K_RETURN:
+                    continue
                 else:
                     name += event.unicode
     text.add_score_to_file(name, score)

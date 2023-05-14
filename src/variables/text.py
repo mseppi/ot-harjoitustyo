@@ -15,8 +15,7 @@ class Text:
         """
         self.screen = screen
         self.font = pygame.font.Font('freesansbold.ttf', 32)
-        dir = "/home/mseppi/ot-harjoitustyo/src"
-        self.highscore_file = os.path.join(dir,"variables", "highscore.txt")
+        self.highscore_file = os.path.join(dir, "highscore.txt")
         self.highscore_list = []
         with open(self.highscore_file, "r")as f:
             for line in f:

@@ -1,3 +1,5 @@
+import os
+
 """ This file contains all the constant variables used in the game
 """
 shapes= [
@@ -77,3 +79,5 @@ shape_colors = {
 }
 
 frozen_blocks = []
+
+dir = os.path.dirname(__file__)
