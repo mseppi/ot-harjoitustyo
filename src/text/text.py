@@ -101,8 +101,7 @@ class Text:
         Returns:
             pygame.Surface, pygame.Rect: The text and the rect of the text
         """
-        font = pygame.font.Font('freesansbold.ttf', 32)
-        text = font.render("Press Enter to start", True, (255, 255, 255))
+        text = self.font.render("Press Enter to start", True, (255, 255, 255))
         text_rect = text.get_rect()
         text_rect.center = (UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2)
         return text, text_rect
