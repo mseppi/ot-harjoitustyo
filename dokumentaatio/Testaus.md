@@ -28,7 +28,8 @@ Peliä on testattu sekä linux-läppärillä, että windowsin wsl-koneella. Wind
 
 Kaikki määrittelydokumentin toiminnallisuudet on käyty läpi manuaalisesti ja monet myös unittestillä.
 
-##Sovellukseen jäänet laatuongelmat
+## Sovellukseen jäänet laatuongelmat
 
 - Jos highscores.txt tiedosto on virheellinen, sovellus kaatuu.
 - Jos haluaa pelata uuden pelin, pitää sovellus aloittaa alusta.
+- Jos game over-ruudun aikana painaa enteriä, sovellus painaa heti enteriä seuraavassa ruudussa.
