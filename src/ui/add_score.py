@@ -22,6 +22,7 @@ def add_score(score, screen):
         pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                pygame.quit()
                 process = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN and len(name) > 0:

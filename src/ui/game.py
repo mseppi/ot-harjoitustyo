@@ -7,8 +7,11 @@ from services.grid import Grid
 from ui.add_score import add_score
         
 def final(screen):
-    
-    
+    """The main game loop
+
+    Args:
+        screen (pygame.Surface): The screen to display the game on
+    """
     
     clock = pygame.time.Clock()
     game = Grid()
@@ -43,7 +46,7 @@ def final(screen):
         timer +=10
 
 
-    if text.is_score_highscore(game.score):
+    if text.is_score_highscore(game.score) and game.score > 0:
         add_score(game.score, screen)
         
     

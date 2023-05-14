@@ -1,10 +1,1 @@
-bot,100
-bot,90
-bot,80
-bot,70
-bot,60
-bot,50
-bot,40
-bot,30
-koira,25
-bot,20
+koira,4

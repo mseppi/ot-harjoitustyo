@@ -1,7 +1,7 @@
 import random
 import pygame
 from variables.config import WINDOW_HEIGHT, WINDOW_WIDTH, BSIZE
-from variables.constants import frozen_blocks, shapes, shape_colors
+from variables.constants import FROZEN_BLOCKS, shapes, shape_colors
 
 
 
@@ -17,7 +17,6 @@ class Pieces:
         self.y_value = 0-BSIZE*2
         self.downmoving = False
         self.next_shape = random.randint(0, len(shapes)-1)
-        global frozen_blocks
 
     def draw(self, screen):
         """Draws the piece on the screen
@@ -43,10 +42,11 @@ class Pieces:
                 if value != 0:
                     x_value = 500 + column_index * BSIZE
                     y_value = 150 + row_index * BSIZE
-                    pygame.draw.rect(screen, shape_colors[self.next_shape], (x_value, y_value, BSIZE, BSIZE))
-        screen.blit(pygame.font.SysFont('comicsans', 30).render('Next piece:', True, (255, 255, 255)), (500, 100))
+                    pygame.draw.rect(screen, shape_colors[self.next_shape], \
+                                     (x_value, y_value, BSIZE, BSIZE))
+        screen.blit(pygame.font.SysFont('comicsans', 30).render('Next piece:', \
+                                            True, (255, 255, 255)), (500, 100))
 
-    
     def rotate(self):
         """Rotates the piece
         """
@@ -83,11 +83,6 @@ class Pieces:
         if self.collision():
             self.x_value -= BSIZE
 
-    def up(self):
-        """Moves the piece up
-        """
-        self.y_value -= BSIZE
-
     def space(self):
         """Moves the piece down until it collides
         """
@@ -107,8 +102,9 @@ class Pieces:
                 if column != 0:
                     if self.y_value + row_index * BSIZE >= WINDOW_HEIGHT:
                         return True
-                    for block in frozen_blocks:
-                        if block[0] == self.x_value + column_index * BSIZE and block[1] == self.y_value + row_index * BSIZE:
+                    for block in FROZEN_BLOCKS:
+                        if block[0] == self.x_value + column_index * BSIZE and \
+                            block[1] == self.y_value + row_index * BSIZE:
                             return True
                     if self.x_value + column_index * BSIZE < 0:
                         return True
@@ -124,12 +120,12 @@ class Pieces:
                 if column != 0:
                     x_value = self.x_value + column_index * BSIZE
                     y_value = self.y_value + row_index * BSIZE
-                    frozen_blocks.append([x_value, y_value, self.color])
+                    FROZEN_BLOCKS.append([x_value, y_value, self.color])
 
     def new_piece(self):
         """Creates a new piece and freezes the current one
         """
-        self.freeze() 
+        self.freeze()
         self.__init__(self.next_shape)
 
     def game_over(self):
@@ -138,11 +134,11 @@ class Pieces:
         Returns:
             bool: True if the game is over, False otherwise
         """
-        for block in frozen_blocks:
+        for block in FROZEN_BLOCKS:
             if block[1] <= 0:
                 return True
         return False
-    
+
     def events(self, event):
         """Handles the events for the piece
 

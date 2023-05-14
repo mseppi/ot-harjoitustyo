@@ -78,6 +78,6 @@ shape_colors = {
     6: BLUE
 }
 
-frozen_blocks = []
+FROZEN_BLOCKS = []
 
 dir = os.path.dirname(__file__)

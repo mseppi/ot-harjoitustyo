@@ -9,6 +9,12 @@ from services.text import Text
 
 
 def main_menu(screen):
+    """Displays the main menu and inits pygame
+
+    Args:
+        screen (pygame.Surface): The screen to display the menu on
+    """
+    pygame.init()
     process = True
     text = Text(screen)
     while process:
