@@ -41,9 +41,9 @@ def final(screen):
         clock.tick(FPS)
 
     text = Text(screen)
-    while timer <400:
+    while timer <3000:
         text.game_over()
-        timer +=1
+        timer += clock.tick(FPS)
 
 
     if text.is_score_highscore(game.score) and game.score > 0:
