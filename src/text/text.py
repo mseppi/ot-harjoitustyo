@@ -27,7 +27,7 @@ class Text:
         """Displays the game over screen
         """
         font = pygame.font.Font('freesansbold.ttf', 100)
-        text = font.render("Game Over", True, (RED))
+        text = font.render("Game Over", True, (WHITE))
         text_rect = text.get_rect()
         text_rect.center = (UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2 - 100)
         self.screen.blit(text, text_rect)
@@ -97,7 +97,7 @@ class Text:
         Returns:
             pygame.Surface, pygame.Rect: The text and the rect of the text
         """
-        text = self.font.render("Press Enter to start", True, (255, 255, 255))
+        text = self.font.render("Press Enter to start", True, (WHITE))
         text_rect = text.get_rect()
         text_rect.center = (UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2)
         return text, text_rect
@@ -113,9 +113,9 @@ class Text:
             pygame.Surface, pygame.Rect, pygame.Surface, pygame.Rect:
             The text and the rect of the text
         """
-        prompt_text = self.font.render("Enter your name", True, (255, 255, 255))
+        prompt_text = self.font.render("Enter your name", True, (WHITE))
         prompt_text_rect = prompt_text.get_rect(center=\
                         (UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2 - 50))
-        name_text = self.font.render(name, True, (255, 255, 255))
+        name_text = self.font.render(name, True, (WHITE))
         name_text_rect = name_text.get_rect(center=(UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2))
         return prompt_text, prompt_text_rect, name_text, name_text_rect
