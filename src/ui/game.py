@@ -3,7 +3,8 @@ from services.piece import Pieces
 from variables.config import *
 from variables.constants import *
 from services.grid import Grid
-
+from services.scores import *
+from ui.add_score import add_score
         
 def final(screen):
     clock = pygame.time.Clock()
@@ -30,5 +31,7 @@ def final(screen):
         piece.draw(screen)
         pygame.display.update()
         clock.tick(FPS)
+    if is_score_highscore(game.score):
+        add_score(game.score, screen)
         
     

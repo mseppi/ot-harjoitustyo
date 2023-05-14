@@ -10,7 +10,7 @@ def highscore(screen):
         screen (pygame.Surface): The screen to display the highscore on
     """
     dir = "/home/mseppi/ot-harjoitustyo/src"
-    highscore_file = os.path.join(dir, "variables", "highscore.txt")
+    highscore_file = os.path.join(dir,"variables", "highscore.txt")
     process = True
     highscore = []
     with open(highscore_file, "r")as f:

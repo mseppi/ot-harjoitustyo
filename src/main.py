@@ -1,4 +1,3 @@
-from ui.game import final
 from ui.main_menu import main_menu
 import pygame
 from variables.config import *
