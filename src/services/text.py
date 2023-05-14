@@ -68,7 +68,6 @@ class Text:
         """
         with open(self.highscore_file, 'a') as file:
             file.write(name + "," + str(score) + "\n")
-        print ("Score added to file")
 
     def is_score_highscore(self, score):
         """Checks if the score is a highscore

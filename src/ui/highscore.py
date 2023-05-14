@@ -1,7 +1,7 @@
 import pygame
 from variables.config import *
 from variables.constants import *
-from variables.text import Text
+from services.text import Text
 import os
 
 def highscore(screen):
@@ -18,6 +18,7 @@ def highscore(screen):
         highscore.highscore()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                pygame.quit()
                 process = False
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:

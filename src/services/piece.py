@@ -163,6 +163,8 @@ class Pieces:
                 self.space()
             if event.key == pygame.K_DOWN:
                 self.downmoving = True
+            if event.key == pygame.K_LCTRL:
+                self.reverse_rotate()
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_DOWN:
                 self.downmoving = False

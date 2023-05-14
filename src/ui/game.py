@@ -2,7 +2,7 @@ import pygame
 from services.piece import Pieces
 from variables.config import *
 from variables.constants import *
-from variables.text import Text
+from services.text import Text
 from services.grid import Grid
 from ui.add_score import add_score
         
