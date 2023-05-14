@@ -28,8 +28,8 @@ Jos sait huipputuloksen, kirjoita nimesi top-listalle. Nimi ei voi olla merkitö
 
 Loppupistetaulukko: Enter tai escape siirtyy sulkee pelin.
 
-## Python-versio
-Sovelluksen toiminta on testattu pythonin versioilla 3.10.6. Vanhemmilla tai jopa uudemmillakin python-versioilla voi esiintyä ongelmia.
+## Python ja poetry-versiot
+Sovelluksen toiminta on testattu pythonin versioilla 3.10.6. ja Poetryn versiolla 1.4.2. Vanhemmilla tai jopa uudemmillakin python-versioilla voi esiintyä ongelmia.
 
 ## Dokumentaatio
 
