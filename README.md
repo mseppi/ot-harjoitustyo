@@ -7,19 +7,25 @@ Tetris on peli, jossa tippuu vuorotellen erilaisia palikoita. Pelin ideana on sa
 ### MAIN MENU
 
 Enter: Aloita peli
+
 H: Näytä pistetaulukko
+
 Enter tai escape pistetaulukossa: Siirtyy takaisin menuun.
 
 ### PELIN SISÄLLÄ
 
 Nuolet vasemmalle, oikealle ja alas: Liikuta palikkaa
+
 Nuoli ylös: Pyöritä palikkaa
+
 Left control: Pyöritä palikkaa toiseen suuntaan
+
 Spacebar: Tiputa palikka välittömästi alas asti
 
 ### PELIN LOPUKSI
 
 Jos sait huipputuloksen, kirjoita nimesi top-listalle. Nimi ei voi olla merkitön tai yli 10 merkkiä eikä se sisällä välilyöntejä.
+
 Loppupistetaulukko: Enter tai escape siirtyy sulkee pelin.
 
 ## Python-versio
