@@ -28,10 +28,12 @@ def final(screen):
         
 
         screen.fill((BLACK))
+        piece.draw_next_piece(screen)
         game.draw_grid(screen)
         piece.draw(screen)
         pygame.display.update()
         clock.tick(FPS)
+
 
     while timer <1000:
         font = pygame.font.Font('freesansbold.ttf', 100)
