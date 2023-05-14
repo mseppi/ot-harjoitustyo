@@ -7,4 +7,4 @@ Bot5,50
 Bot4,40
 Bot3,30
 Bot2,20
-Bot1,10
+Bot1,15

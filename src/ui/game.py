@@ -12,6 +12,7 @@ def final(screen):
     piece = Pieces()
     running = True
     counter = 0
+    timer = 0
 
     while running:
         counter += 1
@@ -31,6 +32,16 @@ def final(screen):
         piece.draw(screen)
         pygame.display.update()
         clock.tick(FPS)
+
+    while timer <1000:
+        font = pygame.font.Font('freesansbold.ttf', 100)
+        text = font.render("Game Over", True, (RED))
+        textRect = text.get_rect()
+        textRect.center = (UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2 - 100)
+        screen.blit(text, textRect)
+        pygame.display.update()
+        timer += clock.tick(10)
+
     if is_score_highscore(game.score):
         add_score(game.score, screen)
         

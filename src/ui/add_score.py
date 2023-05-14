@@ -31,7 +31,8 @@ def add_score(score, screen):
                 elif event.key == pygame.K_BACKSPACE:
                     name = name[:-1]
                 else:
-                    name += event.unicode
+                    if len(name) < 10:
+                        name += event.unicode
     with open(highscore_file, 'a') as file:
         file.write(name + "," + str(score) + "\n")
-    remove_lowest_score(highscore_file)
+    remove_lowest_score()

@@ -24,7 +24,7 @@ def is_score_highscore(score):
                 return True
     return False
 
-def remove_lowest_score(highscore_file):
+def remove_lowest_score():
     """Removes the lowest score from the highscore file
 
     Args:
