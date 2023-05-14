@@ -167,4 +167,3 @@ class Pieces:
             if event.key == pygame.K_DOWN:
                 self.downmoving = False
     
-

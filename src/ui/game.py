@@ -2,11 +2,15 @@ import pygame
 from services.piece import Pieces
 from variables.config import *
 from variables.constants import *
+from variables.text import Text
 from services.grid import Grid
 from services.scores import *
 from ui.add_score import add_score
         
 def final(screen):
+    
+    
+    
     clock = pygame.time.Clock()
     game = Grid()
     piece = Pieces()
@@ -36,12 +40,8 @@ def final(screen):
 
 
     while timer <1000:
-        font = pygame.font.Font('freesansbold.ttf', 100)
-        text = font.render("Game Over", True, (RED))
-        textRect = text.get_rect()
-        textRect.center = (UI_WINDOW_WIDTH // 2, UI_WINDOW_HEIGHT // 2 - 100)
-        screen.blit(text, textRect)
-        pygame.display.update()
+        text = Text(screen)
+        text.game_over()
         timer += clock.tick(10)
 
     if is_score_highscore(game.score):
