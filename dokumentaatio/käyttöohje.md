@@ -15,13 +15,29 @@ poetry install
 ```
 poetry run invoke start
 ```
+##Pelin aloittaminen
 
-## Pelin kontrollit
+Aloita peli painamalla enteriä.
 
-Vasen nuoli: Liiku vasemmalle
+![](./kuvat/menu.png)
 
-Oikea nuoli: Liiku oikealle
+Voit myös tarkistella huipputuloksia painamalla H-näppäintä. Tästä ruudukosta voi palata päävalikkoon painamalla enteriä tai esciä.
 
-Nuoli ylös: Pyöritä tetris-palikkaa
+![](./kuvat/highscore.full.png)
 
-Spacebar: Pyöritä tetris-palikkaa toiseen suuntaan
+
+Eteesi avautuu klassinen tetris näkymä. Oikealla hudissa näkyy myös seuraava palikka, nykyinen taso sekä nykyinen pistemäärä. Taso nousee jokaisen 20 pisteen kohdalla.
+
+![](./kuvat/start.png)
+
+Häviät pelin, kun kuutiot kasaantuvat pelin yläreunaan.
+
+![](./kuvat/gameover.png)
+
+Jos tuloksesi päätyy top kymppiin, pääset top-listalle. Tällöin peli kysyy sinulta nimeä.
+
+![](./kuvat/name_enter.png)
+
+Lopuksi peliin aukeaa tulosnäkymä. Pelistä pääsee pois painamalla enteriä, esciä tai ruksia.
+
+![](./kuvat/highscore.full.png)
